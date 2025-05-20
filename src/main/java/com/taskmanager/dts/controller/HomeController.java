@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "index"; // Esto buscará un archivo index.html en src/main/resources/static
+        return "index"; // Esto ahora funcionará con spring.mvc.view.suffix=.html
     }
 }

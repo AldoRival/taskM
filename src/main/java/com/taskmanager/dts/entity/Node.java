@@ -16,17 +16,22 @@ public class Node {
     private String status; // activo, inactivo
     private Long lastHeartbeat;
 
-    // Getters y Setters
+    // Métodos explícitos para nodeId
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    // Otros getters y setters ya existentes
     public Long getLastHeartbeat() {
         return lastHeartbeat;
     }
 
     public void setLastHeartbeat(Long lastHeartbeat) {
         this.lastHeartbeat = lastHeartbeat;
-    }
-
-    public String getNodeId() {
-        return nodeId;
     }
 
     public void setStatus(String status) {
