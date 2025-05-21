@@ -15,7 +15,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/static/");
+        resolver.setPrefix("/");
         resolver.setSuffix(".html");
         return resolver;
     }

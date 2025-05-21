@@ -8,6 +8,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "index"; // Esto ahora funcionará con spring.mvc.view.suffix=.html
+        return "index"; // Esto ahora funcionará con el sufijo .html configurado
+    }
+
+    // Añadir un mapeo explícito para index.html por si hay problemas con la ruta raíz
+    @GetMapping("/index.html")
+    public String indexPage() {
+        return "index";
     }
 }
