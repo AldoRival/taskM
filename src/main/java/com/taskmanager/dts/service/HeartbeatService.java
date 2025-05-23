@@ -18,7 +18,7 @@ public class HeartbeatService {
     @Autowired
     private TaskRepository taskRepository;
 
-    @Scheduled(fixedRate = 5000) // Cada 5 segundos
+    @Scheduled(fixedRate = 10000) // Cada 5 segundos
     public void checkNodeStatus() {
         // Obtener la lista de nodos activos
         List<Node> activeNodes = nodeRepository.findByStatus("activo");
@@ -29,7 +29,7 @@ public class HeartbeatService {
             long lastHeartbeat = node.getLastHeartbeat();
 
             // Si el último heartbeat fue hace más de 10 segundos, marcar el nodo como inactivo
-            if (currentTime - lastHeartbeat > 10000) {
+            if (currentTime - lastHeartbeat > 20000) {
                 node.setStatus("inactivo");
                 nodeRepository.save(node);
 
