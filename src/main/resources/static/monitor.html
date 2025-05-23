@@ -479,6 +479,7 @@
         // Verificar si no hay nodos activos
         const activeNodes = systemData.nodes.filter(node => node.status === 'activo');
         if (activeNodes.length === 0 && systemData.nodes.length > 0) {
+       // console.log(activeNodes);
             systemData.alerts.push({
                 type: 'danger',
                 message: 'No hay nodos activos en el sistema',
